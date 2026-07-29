@@ -4,10 +4,11 @@ class Solution(object):
         :type nums: List[int]
         :rtype: int
         """
-        curr_num=nums[0]
-        max_sum=nums[0]
-
-        for i in range (1, len(nums)):
-            curr_num=max(nums[i],curr_num+nums[i])
-            max_sum=max(max_sum,curr_num)
-        return max_sum
+        total=0
+        maxi=nums[0]
+        for i in range(len(nums)):
+            total=total+nums[i]
+            maxi=max(maxi,total)
+            if total<0 :
+                total=0
+        return maxi
